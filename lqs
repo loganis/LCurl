@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Loganis Query Script curl example
+# put your token in a file in a secure directory
+#
+# Formats used
+# TOKEN_FILE: token=..........
+# QUERY_FILE: query=..........
+
+function show_usage {
+	 echo "Usage: lqs TOKEN_FILE QUERY_FILE"
+}
+
+if [ -z "$1" ]
+   then 
+   	echo "Token file missing error."
+	show_usage
+	exit 1
+fi
+
+if [ -z "$2" ]
+   then
+	echo "Query file missing error."
+	show_usage
+	exit 1
+fi
+
+curl -X POST --compressed --data-urlencode -k -d @"${1}" -d @"${2}" https://ldash.loganis.com/LQS.aspx/api/v3

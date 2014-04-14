@@ -1,0 +1,6 @@
+query=                                                                          
+{:met "ch0:ga:visits"                                                         
+ :per "last_2_weeks"                                                              
+ :dim "date"                                                            
+ :fmt "csz"                                                                     
+ :src :update}
