@@ -41,6 +41,22 @@ lqs ~/.my-token samples/query-csv-gzip
 ...
 ```
 
+## Output format :fmt
+
+* Default output format of a query is JSON with Unix time
+* To change output format, put a :fmt tag in your query
+  * `:fmt "csv"` CSV with YYYY-MM-DD time
+  * `:fmt "csz"` CSV with YYYY-MM-DD time using Gzipped transport
+  * `:fmt "jsz"` JSON with Unix time using Gzipped transport
+
+## Saving responses
+
+* `lqs` script writes to STDOUT, you can save it to a file:
+
+```bash
+lqs ~/.my-token samples/query-csv-gzip > my-result.csv
+```
+
 ## License
 
 * LCurl can be distributed under [MIT License](https://raw.githubusercontent.com/loganis/LSheet/master/LICENSE)
